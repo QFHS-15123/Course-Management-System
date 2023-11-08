@@ -2,55 +2,41 @@
 
 directory
 
-[1. Project Background [5](#project-background)](#project-background)
+[1. Project Background](#project-background)
 
-[2. Design Module [6](#design-module)](#design-module)
+[2. Design Module](#design-module)
 
-[2.1 Development tools and techniques
-[6](#development-tools-and-techniques)](#development-tools-and-techniques)
+[2.1 Development tools and techniques](#development-tools-and-techniques)
 
-[2.2 Analysis of key business requirements
-[6](#analysis-of-key-business-requirements)](#analysis-of-key-business-requirements)
+[2.2 Analysis of key business requirements](#analysis-of-key-business-requirements)
 
-[3. Database design [8](#database-design)](#database-design)
+[3. Database design](#database-design)
 
-[3.1 Data requirements [8](#data-requirements)](#data-requirements)
+[3.1 Data requirements](#data-requirements)
 
-[3.2 conceptual design [8](#conceptual-design)](#conceptual-design)
+[3.2 conceptual design](#conceptual-design)
 
-[3.3 Logical design [8](#logical-design)](#logical-design)
+[3.3 Logical design](#logical-design)
 
-[4. Description of the function
-[10](#description-of-the-function)](#description-of-the-function)
+[4. Description of the function](#description-of-the-function)
 
-[4.1 Functional module design
-[10](#functional-module-design)](#functional-module-design)
+[4.1 Functional module design](#functional-module-design)
 
-[4.2 System flow diagram design
-[11](#system-flow-diagram-design)](#system-flow-diagram-design)
+[4.2 System flow diagram design](#system-flow-diagram-design)
 
-[5. System implementation
-[13](#system-implementation)](#system-implementation)
+[5. System implementation](#system-implementation)
 
-[5.1 System login screen
-[13](#system-login-screen)](#system-login-screen)
+[5.1 System login screen](#system-login-screen)
 
-[5.2 Home page interface
-[13](#home-page-interface)](#home-page-interface)
+[5.2 Home page interface](#home-page-interface)
 
-[5.3 Professional news interface
-[14](#professional-news-interface)](#professional-news-interface)
+[5.3 Professional news interface](#professional-news-interface)
 
-[5.4 Large job interface
-[15](#large-job-interface)](#large-job-interface)
+[5.4 Large job interface](#large-job-interface)
 
-[5.5 Course management interface
-[17](#course-management-interface)](#course-management-interface)
+[5.5 Course management interface](#course-management-interface)
 
-[5.6 Account management interface
-[18](#account-management-interface)](#account-management-interface)
-
-[6. epilogue [20](#_Toc107778626)](#_Toc107778626)
+[5.6 Account management interface](#account-management-interface)
 
 Account and password:
 
@@ -58,7 +44,7 @@ Account and password:
 
 2)  Teacher: Account 101, password 101101, account 102, password 102102
 
-# Project Background {#project-background .论文-一级标题}
+# Project Background
 
 According to the development requirements, this website is mainly used
 in teaching management, and completes the digital management of daily
@@ -80,9 +66,9 @@ teaching management. Therefore, the website provides an efficient,
 accurate and fast management mode for teaching management, and realizes
 standardized and scientific management.
 
-# Design Module {#design-module .论文-一级标题}
+# Design Module 
 
-## Development tools and techniques {#development-tools-and-techniques .论文-二级标题}
+## Development tools and techniques 
 
 The information management professional system of this project is a
 front-end and back-end separation of B/S architecture system
@@ -131,7 +117,7 @@ layer, which also makes it very easy to learn. At the same time, while
 it is easy to operate, Vue.js is easy to integrate with other projects
 or libraries.
 
-## Analysis of key business requirements {#analysis-of-key-business-requirements .论文-二级标题}
+## Analysis of key business requirements 
 
 1.  Account Management
 
@@ -176,9 +162,9 @@ database, you need to filter the scope of teachers viewing and modifying
 course introductions and the scope of students viewing course
 introductions based on the course number.
 
-# Database design {#database-design .论文-一级标题}
+# Database design 
 
-## Data requirements {#data-requirements .论文-二级标题}
+## Data requirements 
 
 Data requirements analysis is mainly to clarify the attributes of the
 object entities involved in the system and the content stored in the
@@ -206,13 +192,13 @@ database. The specific data requirements of the system are as follows:
     a one-to-one relationship with the course and is one of the
     attributes of the course schedule.
 
-## conceptual design {#conceptual-design .论文-二级标题}
+## conceptual design 
 
 Through analysis, it can be obtained that the system has the following
 entities: student entity, teacher entity, course entity, professional
 news entity (news), and large homework entity (project).
 
-## Logical design {#logical-design .论文-二级标题}
+## Logical design 
 
 Through entity attribute analysis, the relationship between entities can
 be abstracted into the following relationship model, in which the
@@ -247,14 +233,13 @@ relationship model is as follows:
 From the above design analysis, the E-R diagram can be obtained (Figure
 3.1).
 
-![](./media/image1.png){width="5.768055555555556in"
-height="3.4409722222222223in"}
+![](./media/image1.png)
 
 **Figure 3.1 E-R diagram**
 
-# Description of the function {#description-of-the-function .论文-一级标题}
+# Description of the function 
 
-## Functional module design {#functional-module-design .论文-二级标题}
+## Functional module design 
 
 Teacher users mainly have the following modules:
 
@@ -276,8 +261,7 @@ Student users mainly have the following modules:
 
 (4) Course Description: View
 
-> ![](./media/image2.png){width="2.405941601049869in"
-> height="2.405941601049869in"}
+> ![](./media/image2.png)
 
 **Figure 4.1.1 System Functional Design Structure Diagram**
 
@@ -295,47 +279,41 @@ the ProjDao interface (Figure 4.1.4), which carries parameters to
 operate on the database through the SQL statement in ProjMapping .xml
 and inserts large job data into the database (Figure 4.1.5).
 
-![](./media/image3.png){width="5.358534558180227in"
-height="3.57794728783902in"}
+![](./media/image3.png)
 
 **Figure 41.2 The method of sending large job data to the backend in
 vue**
 
-![](./media/image4.png){width="5.768055555555556in"
-height="1.1229166666666666in"}
+![](./media/image4.png)
 
 **Figure 41.3. Publish the controller class involved in the big job**
 
-![](./media/image5.png){width="5.768055555555556in"
-height="0.48541666666666666in"}
+![](./media/image5.png)
 
 **Figure 41.4 Publish the method addProj in the ProjDao interface
 involved in the big job**
 
-![](./media/image6.png){width="5.768055555555556in"
-height="0.8118055555555556in"}
+![](./media/image6.png)
 
 **Figure 4.1.5 SQL statements involved in publishing a large job**
 
-## System flow diagram design {#system-flow-diagram-design .论文-二级标题}
+## System flow diagram design 
 
 The flowchart is also designed and analyzed from the perspective of two
 roles, teacher users and student users, and the specific design is as
 follows:
 
-![](./media/image7.png){width="4.019802055993001in"
-height="3.6490857392825897in"}
+![](./media/image7.png)
 
 **Figure 4.2.1 Flowchart of Teacher User Functions**
 
-![](./media/image8.png){width="4.038963254593176in"
-height="3.6888484251968503in"}
+![](./media/image8.png)
 
 **Figure 4.2.2 Flowchart of Student User Functions**
 
-# System implementation {#system-implementation .论文-一级标题}
+# System implementation 
 
-## System login screen {#system-login-screen .论文-二级标题}
+## System login screen 
 
 The system login screen is logged in by the user (Figure 5.1.)1) Enter
 the correct username and password to enter the system, after successful
@@ -344,25 +322,22 @@ student number or employee number, and the corresponding feedback will
 be obtained if the input is wrong. The main backend controller layer
 code for the feature implementation is shown in Figure 5.12。
 
-![](./media/image9.png){width="5.768055555555556in"
-height="2.6104166666666666in"}
+![](./media/image9.png)
 
 **Figure 5.12 Screenshot of the login screen**
 
-![](./media/image10.png){width="5.1476159230096235in"
-height="2.6487970253718287in"}
+![](./media/image10.png)
 
 **Figure 5.12 Screenshot of the main backend controller layer code on
 the login page**
 
-## Home page interface {#home-page-interface .论文-二级标题}
+## Home page interface 
 
 > The home page interface is shown in Figure 52 shown.
 
-![](./media/image11.png){width="5.768055555555556in"
-height="2.6131944444444444in"}**Figure 5.2 Screenshot of the home page**
+![](./media/image11.png)**Figure 5.2 Screenshot of the home page**
 
-## Professional news interface {#professional-news-interface .论文-二级标题}
+## Professional news interface 
 
 The professional news management module is shown in Figure 5.3.1. Each
 piece of news is presented in the form of a card, showing the news
@@ -372,17 +347,15 @@ to teacher users and hidden from student users. Clicking on the card
 will bring a pop-up window to show the details of the news, as shown in
 Figure 5.3.2.
 
-![](./media/image12.png){width="5.768055555555556in"
-height="2.595138888888889in"}
+![](./media/image12.png)
 
 **Figure 5.3.1 Screenshot of the professional news interface**
 
-![](./media/image13.png){width="5.768055555555556in"
-height="2.6166666666666667in"}
+![](./media/image13.png)
 
 **Figure 5.3.2 Screenshot of the professional news pop-up window**
 
-## Large job interface {#large-job-interface .论文-二级标题}
+## Large job interface 
 
 Figure 5.4.1 shows the student interface of the large homework
 management module, and Figure 5.4 shows the teacher\'s interface2 shown.
@@ -397,31 +370,26 @@ and the class submission, and click on the row of the table to see the
 detailed submission of students, as shown in Figure 5.44. Figure 5.4.5
 shows the page where the teacher publishes a large assignment.
 
-![](./media/image14.png){width="5.768055555555556in"
-height="2.6166666666666667in"}
+![](./media/image14.png)
 
 **Figure 5.41 Screenshot of the student\'s homework interface**
 
-![](./media/image15.png){width="5.768055555555556in"
-height="2.592361111111111in"}
+![](./media/image15.png)
 
 **Figure 5.42 Screenshot of the teacher\'s homework interface**
 
-![](./media/image16.png){width="5.768055555555556in"
-height="2.595138888888889in"}
+![](./media/image16.png)
 
 **Figure 5.4Screenshots of the 3 major job submission interfaces**
 
-![](./media/image17.png){width="5.768055555555556in"
-height="2.6041666666666665in"}**Figure 5.4Screenshot of the interface of
+![](./media/image17.png)**Figure 5.4Screenshot of the interface of
 the details of the 4 major jobs**
 
-![](./media/image18.png){width="5.768055555555556in"
-height="2.6104166666666666in"}
+![](./media/image18.png)
 
 **Figure 5.4.5 Screenshot of the big job release page**
 
-## Course management interface {#course-management-interface .论文-二级标题}
+## Course management interface 
 
 The course management module is shown in Figure 5.5.1. The information
 for each course is presented in the form of a card, showing the course
@@ -432,28 +400,23 @@ bring up a pop-up window to show the details of the course, as shown in
 Figure 5.5.2. Teachers can modify the course description, as shown in
 Figure 5.5.3.
 
-![](./media/image19.png){width="5.768055555555556in"
-height="2.6104166666666666in"}
+![](./media/image19.png)
 
 **Figure 5.51 Screenshot of the course management interface**
 
-![](./media/image20.png){width="5.768055555555556in"
-height="2.607638888888889in"}
+![](./media/image20.png)
 
 **Figure 5.52 Screenshot of the course management pop-up window**
 
-![](./media/image21.png){width="5.768055555555556in"
-height="2.6041666666666665in"}
+![](./media/image21.png)
 
-**Figure 5.53 Screenshot of the modified interface for course
-introduction**
+**Figure 5.53 Screenshot of the modified interface for course introduction**
 
-## Account management interface {#account-management-interface .论文-二级标题}
+## Account management interface 
 
 Figure 5.11 shows the account management module. Users can change the
 password by entering the password twice and clicking the OK button.
 
-![](./media/image22.png){width="5.768055555555556in"
-height="2.592361111111111in"}
+![](./media/image22.png)
 
 **Figure 5.11 Screenshot of the account management interface**
