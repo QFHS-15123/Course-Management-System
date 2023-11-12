@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.schoolwebsite_spring.dao.VuserDao">
+    <select id="selectVuser" resultType="com.example.schoolwebsite_spring.bean.Vuser">
+        select  * from Vuser where account=#{account} and password=#{password};
+    </select>
+
+    <select id="getName" resultType="java.lang.String">
+        select name from Vuser where account=#{account};
+    </select>
+
+    <update id="setStuPw">
+        UPDATE student SET stu_pw = #{stu_pw} WHERE stu_id = #{stu_id};
+    </update>
+
+    <update id="setTeaPw">
+        UPDATE teacher SET tea_pw = #{tea_pw} WHERE tea_id = #{tea_id};
+    </update>
+</mapper>
+

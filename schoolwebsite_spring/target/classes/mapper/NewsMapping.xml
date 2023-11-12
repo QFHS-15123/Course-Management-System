@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.schoolwebsite_spring.dao.NewsDao">
+    <resultMap id="News" type="com.example.schoolwebsite_spring.bean.SeeNews">
+        <id column="news_id" property="news_id"></id>
+
+        <result column="tea_id" property="tea_id"></result>
+        <result column="news_info" property="news_info"></result>
+        <result column="news_uptime" property="news_uptime"></result>
+        <result column="cour_id" property="cour_id"></result>
+
+    </resultMap>
+    <select id="getAllNews" resultType="com.example.schoolwebsite_spring.bean.SeeNews">
+        SELECT * from seenews;
+    </select>
+
+    <insert id="addNews">
+        insert into news (news_name,news_info,news_uptime,cour_id,tea_id)
+        values(#{news_name},#{news_info},#{news_uptime},#{cour_id},#{tea_id})
+    </insert>
+
+    <select id="getStuNews" resultType="com.example.schoolwebsite_spring.bean.SeeNews">
+        SELECT s.* from seenews s, stu_cour t WHERE s.cour_id = t.cour_id AND stu_id = #{stu_id};
+    </select>
+
+    <select id="getTeaNews" resultType="com.example.schoolwebsite_spring.bean.SeeNews">
+        SELECT * from seenews WHERE tea_id = #{tea_id};
+    </select>
+
+</mapper>

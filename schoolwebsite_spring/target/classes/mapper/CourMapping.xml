@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.schoolwebsite_spring.dao.CourDao">
+
+    <insert id="upCour">
+        UPDATE course set cour_intro = #{cour_intro}
+        WHERE cour_id = #{cour_id}
+    </insert>
+
+    <select id="getStuCour" resultType="com.example.schoolwebsite_spring.bean.SeeStuCour">
+        SELECT * from seestucour Where stu_id = #{stu_id}
+    </select>
+
+    <select id="getTeaCour" resultType="com.example.schoolwebsite_spring.bean.Course">
+        SELECT * from course c, tea_cour tc
+        Where tea_id = #{tea_id} AND c.cour_id = tc.cour_id
+    </select>
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.schoolwebsite_spring.dao.ProjDao">
+
+    <select id="getAllProj" resultType="com.example.schoolwebsite_spring.bean.SeeProj">
+        SELECT * from seeproj;
+    </select>
+
+    <insert id="addProj">
+        insert into proj (proj_name,proj_info,proj_uptime,proj_ddl,tea_id)
+        values(#{proj_name},#{proj_info},#{proj_uptime},#{proj_ddl},#{tea_id})
+    </insert>
+
+    <select id="getStuProj" resultType="com.example.schoolwebsite_spring.bean.SeeProj">
+        SELECT * from seeproj WHERE stu_id = #{stu_id};
+    </select>
+
+    <select id="getTeaProj" resultType="com.example.schoolwebsite_spring.bean.SeeTeaProj">
+        SELECT s.* from seeteaproj s, tea_cour t
+        WHERE s.cour_id = t.cour_id AND tea_id = #{tea_id};
+    </select>
+
+    <select id="getTeaStuProj" resultType="com.example.schoolwebsite_spring.bean.SeeTeaStuProj">
+        SELECT s.* FROM seeteastuproj s, stu_cour sc
+        WHERE sc.cour_id = #{cour_id} AND s.stu_id = sc.stu_id
+    </select>
+</mapper>

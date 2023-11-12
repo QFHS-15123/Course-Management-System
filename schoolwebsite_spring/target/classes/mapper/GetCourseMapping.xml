@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.schoolwebsite_spring.dao.GetCourseDao">
+
+    <select id="getCourses" resultType="com.example.schoolwebsite_spring.bean.Course">
+        SELECT  c.cour_id, c.cour_name from course c,tea_cour t
+        where c.cour_id=t.cour_id
+          and t.tea_id=#{tea_id}
+    </select>
+
+<!--    <select id="getCourid" resultType="java.lang.String">-->
+<!--        select cour_id from course;-->
+<!--    </select>-->
+
+
+</mapper>
